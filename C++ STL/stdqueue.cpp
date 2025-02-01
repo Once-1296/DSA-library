@@ -1,40 +1,40 @@
 #include<iostream>
-#include<stack>
+#include<queue>
 using namespace std;
 int main()
 {
-    stack<int>st;
+    queue<int>qu;
     cout<<"Enter Number of elements: ";
     int n;
     cin>>n;
     while(n--)
     {
-        cout<<"Enter element "<<st.size()+1<<": ";
+        cout<<"Enter element "<<qu.size()+1<<": ";
         int t;
         cin>>t;
-        st.push(t);
+        qu.push(t);
     }
     char c = 'y';
     do
     {
-        cout<<"Choose option:\n1.Display Top\n2.Pop\n3.Size\n";
+        cout<<"Choose option:\n1.Display Front\n2.Pop\n3.Size\n";
         int opt;
         cin>>opt;
         switch (opt)
         {
         case 1:
-            cout<<st.top();
+            cout<<qu.front();
             break;
         case 2:
-           if(st.empty())cout<<"Empty stack.";
+            if(qu.empty())cout<<"Empty queue.";
             else 
             {
-                cout<<st.top();
-            st.pop();
+                cout<<qu.front();
+            qu.pop();
             }
             break;
         case 3:
-            cout<<st.size();
+            cout<<qu.size();
             break;
         default:
         cout<<"Invalid option.";
@@ -44,10 +44,10 @@ int main()
         cin>>c;
     } while (c=='y'||c=='Y');
     cout<<"Displaying remaining elements.\n";
-    while(!st.empty())
+    while(!qu.empty())
     {
-        cout<<st.top()<<"\n";
-        st.pop();
+        cout<<qu.front()<<"\n";
+        qu.pop();
     }
     return 0;
 }
