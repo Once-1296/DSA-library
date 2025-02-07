@@ -42,6 +42,13 @@ template<typename T>class myStack
     }
     T getsize(){return size;}
     bool empty(){return size==0;}
-    T gettop(){return top->val;}
+    T gettop(){
+        if(!size)
+        {
+            std::cout<<"No elements in the deque\n";
+            return NULL;
+        }
+        return top->val;
+        }
 };
 #endif

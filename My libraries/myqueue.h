@@ -47,6 +47,12 @@ template<typename T>class myQueue
     }
     T getsize(){return size;}
     bool empty(){return size==0;}
-    T getfront(){return front->val;}
+    T getfront(){
+        if(!size)
+        {
+            std::cout<<"No elements in the queue\n";
+            return NULL;
+        }
+        return front->val;}
 };
 #endif
